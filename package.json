@@ -4,7 +4,6 @@
   "description": "Render anything on top of the rest",
   "main": "src/index.js",
   "scripts": {
-    "build": "yarn lint && tsc",
     "prepare": "yarn build",
     "lint": "eslint 'src/**/*.ts?(x)' && prettier --list-different \"**/*.{json,md,js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{json,md,js,jsx,ts,tsx}\""
