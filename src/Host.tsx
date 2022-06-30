@@ -1,12 +1,13 @@
-import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
+import React, {
+  CSSProperties
+} from 'react';
 
 import { useKey } from './hooks/useKey';
 import { Manager, IManagerHandles } from './Manager';
 
 interface IHostProps {
   children: React.ReactNode;
-  style?: ViewStyle;
+  style?: CSSProperties;
 }
 
 export interface IProvider {
@@ -86,9 +87,9 @@ export const Host = ({ children, style }: IHostProps): JSX.Element => {
 
   return (
     <Context.Provider value={{ mount, update, unmount }}>
-      <View style={[{ flex: 1 }, style]} collapsable={false} pointerEvents="box-none">
+      <div style={{ width: "100%", height: "100%", pointerEvents: "auto", ...style }}>
         {children}
-      </View>
+      </div>
 
       <Manager ref={managerRef} />
     </Context.Provider>

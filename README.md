@@ -1,73 +1,60 @@
 # Portalize
 
-[![npm version](https://badge.fury.io/js/react-native-portalize.svg)](https://badge.fury.io/js/react-native-portalize)
-
-The simplest way to render anything on top of the rest.
-
-This component is extracted from [`react-native-paper`](https://github.com/callstack/react-native-paper/tree/master/src/components/Portal) and has been simplified for the purpose of [`react-native-modalize`](https://github.com/jeremybarbet/react-native-modalize).
+The simplest way to render anything on top of the rest FOR WEB.
 
 ## Installation
 
 ```bash
-yarn add react-native-portalize
+yarn add react-portalize
 ```
 
 ## Usage
 
 ```tsx
 import React from 'react';
-import { View, Text } from 'react-native';
-import { Host, Portal } from 'react-native-portalize';
+import { Host, Portal } from 'react-portalize';
 
 export const MyApp = () => (
   <Host>
-    <View>
-      <Text>Some copy here and there...</Text>
+    <div>
+      <span>Some copy here and there...</span>
 
       <Portal>
-        <Text>A portal on top of the rest</Text>
+        <span>A portal on top of the rest</span>
       </Portal>
-    </View>
+    </div>
   </Host>
 );
 ```
 
-**Example with `react-native-modalize` and `react-navigation`**
+**Example with `react-modalize` and `react-navigation`**
 
 ```tsx
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Modalize } from 'react-native-modalize';
-import { Host, Portal } from 'react-native-portalize';
+import { Host, Portal } from 'react-portalize';
 
 const Tab = createBottomTabNavigator();
 
 const ExamplesScreen = () => {
-  const modalRef = useRef<Modalize>(null);
-
-  const onOpen = () => {
-    modalRef.current?.open();
-  };
-
   return (
     <>
-      <TouchableOpacity onPress={onOpen}>
-        <Text>Open the modal</Text>
-      </TouchableOpacity>
+      <div onPress={onOpen}>
+        <span>Open the modal</span>
+      </div>
 
       <Portal>
-        <Modalize ref={modalRef}>...your content</Modalize>
+        <div>...your modal content</div>
       </Portal>
     </>
   );
 };
 
 const SettingsScreen = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>Settings screen</Text>
-  </View>
+  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+    <span>Settings screen</span>
+  </div>
 );
 
 export const App = () => (

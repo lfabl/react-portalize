@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
 
 export interface IManagerHandles {
   mount(key: string, children: React.ReactNode): void;
@@ -36,13 +35,18 @@ export const Manager = React.forwardRef((_, ref): any => {
   );
 
   return portals.map(({ key, children }, index: number) => (
-    <View
+    <div
       key={`react-native-portalize-${key}-${index}`}
-      collapsable={false}
-      pointerEvents="box-none"
-      style={StyleSheet.absoluteFill}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        pointerEvents: "auto"
+      }}
     >
       {children}
-    </View>
+    </div>
   ));
 });

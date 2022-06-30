@@ -15,3 +15,5 @@ yarn.lock
 lib/
 .watchmanconfig
 package-lock.json
+
+/.history
