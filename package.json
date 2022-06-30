@@ -1,5 +1,5 @@
 {
-  "name": "react-native-portalize",
+  "name": "react-portalize",
   "version": "1.0.7",
   "description": "Render anything on top of the rest",
   "main": "src/index.js",
@@ -7,24 +7,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeremybarbet/react-native-portalize.git"
+    "url": "git+https://github.com/lfabl/react-portalize.git"
   },
   "keywords": [
     "portal",
-    "react-native",
     "react",
-    "native",
     "ios",
     "android",
     "above",
     "top"
   ],
-  "author": "Jérémy Barbet",
+  "author": "lfabl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeremybarbet/react-native-portalize/issues"
+    "url": "https://github.com/jeremybarbet/react-portalize/issues"
   },
-  "homepage": "https://github.com/jeremybarbet/react-native-portalize#readme",
+  "homepage": "https://github.com/jeremybarbet/react-portalize#readme",
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md}": [
       "prettier --write"
@@ -55,7 +53,6 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@types/react": "16.9.34",
-    "@types/react-native": "0.62.2",
     "@typescript-eslint/eslint-plugin": "2.29.0",
     "@typescript-eslint/parser": "2.29.0",
     "eslint": "6.8.0",
